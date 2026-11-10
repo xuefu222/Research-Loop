@@ -1,0 +1,297 @@
+{
+  "annotation": "人工设计问题和核对段落，程序定位原页字符区间；非官方评测集",
+  "cases": [
+    {
+      "id": "qasper-count",
+      "paper_id": "qasper",
+      "split": "train",
+      "scope": "abstract",
+      "question": "QASPER 包含多少个问题和多少篇论文？",
+      "lexical_query": "QASPER dataset questions papers",
+      "evidence_spans": [
+        {
+          "doc_id": "qasper",
+          "pdf_page": 1,
+          "start_char": 1075,
+          "end_char": 1152
+        }
+      ],
+      "expected_answer": "5049 个问题，1585 篇论文"
+    },
+    {
+      "id": "qasper-reader",
+      "paper_id": "qasper",
+      "split": "train",
+      "scope": "abstract",
+      "question": "QASPER 提问者在写问题时能阅读什么材料？",
+      "lexical_query": "question writer title abstract read only",
+      "evidence_spans": [
+        {
+          "doc_id": "qasper",
+          "pdf_page": 1,
+          "start_char": 1207,
+          "end_char": 1268
+        }
+      ],
+      "expected_answer": "只阅读标题和摘要"
+    },
+    {
+      "id": "qasper-answer",
+      "paper_id": "qasper",
+      "split": "train",
+      "scope": "abstract",
+      "question": "QASPER 的答案与支撑证据由谁提供？",
+      "lexical_query": "questions answered separate practitioners supporting evidence",
+      "evidence_spans": [
+        {
+          "doc_id": "qasper",
+          "pdf_page": 1,
+          "start_char": 1333,
+          "end_char": 1454
+        }
+      ],
+      "expected_answer": "另一组 NLP 从业者回答并提供证据"
+    },
+    {
+      "id": "qasper-gap",
+      "paper_id": "qasper",
+      "split": "train",
+      "scope": "abstract",
+      "question": "现有模型在全文问答上比人类低至少多少 F1？",
+      "lexical_query": "underperforming humans 27 F1 entire papers",
+      "evidence_spans": [
+        {
+          "doc_id": "qasper",
+          "pdf_page": 1,
+          "start_char": 1568,
+          "end_char": 1655
+        }
+      ],
+      "expected_answer": "至少 27 F1"
+    },
+    {
+      "id": "rag-components",
+      "paper_id": "rag",
+      "split": "train",
+      "scope": "full",
+      "question": "RAG 论文使用哪种检索器和生成模型？",
+      "lexical_query": "DPR Dense Passage Retriever BART seq2seq",
+      "evidence_spans": [
+        {
+          "doc_id": "rag",
+          "pdf_page": 2,
+          "start_char": 1684,
+          "end_char": 1920
+        }
+      ],
+      "expected_answer": "DPR 检索器和 BART 生成器"
+    },
+    {
+      "id": "rag-memory",
+      "paper_id": "rag",
+      "split": "train",
+      "scope": "abstract",
+      "question": "RAG 的非参数记忆来自什么语料？",
+      "lexical_query": "non parametric memory dense index Wikipedia",
+      "evidence_spans": [
+        {
+          "doc_id": "rag",
+          "pdf_page": 1,
+          "start_char": 1282,
+          "end_char": 1387
+        }
+      ],
+      "expected_answer": "Wikipedia 的稠密向量索引"
+    },
+    {
+      "id": "rag-formulations",
+      "paper_id": "rag",
+      "split": "train",
+      "scope": "full",
+      "question": "RAG-Sequence 与 RAG-Token 对检索文档的使用有什么区别？",
+      "lexical_query": "RAG Sequence Token same different document target token",
+      "evidence_spans": [
+        {
+          "doc_id": "rag",
+          "pdf_page": 3,
+          "start_char": 367,
+          "end_char": 553
+        }
+      ],
+      "expected_answer": "前者同一序列使用同一文档，后者允许逐 token 使用不同文档"
+    },
+    {
+      "id": "rag-tasks",
+      "paper_id": "rag",
+      "split": "train",
+      "scope": "abstract",
+      "question": "论文报告在几个开放域问答任务上达到当时最佳水平？",
+      "lexical_query": "state art three open domain QA tasks",
+      "evidence_spans": [
+        {
+          "doc_id": "rag",
+          "pdf_page": 1,
+          "start_char": 1666,
+          "end_char": 1712
+        }
+      ],
+      "expected_answer": "三个任务；这是作者报告"
+    },
+    {
+      "id": "attention-heads",
+      "paper_id": "attention",
+      "split": "validation",
+      "scope": "full",
+      "question": "论文采用几个并行注意力头，每个头的 key 和 value 维度是多少？",
+      "lexical_query": "h 8 heads dk dv 64",
+      "evidence_spans": [
+        {
+          "doc_id": "attention",
+          "pdf_page": 5,
+          "start_char": 529,
+          "end_char": 644
+        }
+      ],
+      "expected_answer": "8 个头，dk=dv=64"
+    },
+    {
+      "id": "attention-dimension",
+      "paper_id": "attention",
+      "split": "validation",
+      "scope": "full",
+      "question": "基础 Transformer 的子层输出与嵌入维度 dmodel 是多少？",
+      "lexical_query": "embedding layers outputs dimension dmodel 512",
+      "evidence_spans": [
+        {
+          "doc_id": "attention",
+          "pdf_page": 3,
+          "start_char": 820,
+          "end_char": 924
+        }
+      ],
+      "expected_answer": "512"
+    },
+    {
+      "id": "attention-position",
+      "paper_id": "attention",
+      "split": "validation",
+      "scope": "full",
+      "question": "论文使用什么函数构造固定位置编码？",
+      "lexical_query": "positional encodings sine cosine frequencies",
+      "evidence_spans": [
+        {
+          "doc_id": "attention",
+          "pdf_page": 6,
+          "start_char": 1067,
+          "end_char": 1139
+        }
+      ],
+      "expected_answer": "不同频率的正弦和余弦函数"
+    },
+    {
+      "id": "attention-bleu",
+      "paper_id": "attention",
+      "split": "validation",
+      "scope": "abstract",
+      "question": "Transformer 在 WMT 2014 英德任务上报告了多少 BLEU？",
+      "lexical_query": "WMT 2014 English German 28.4 BLEU",
+      "evidence_spans": [
+        {
+          "doc_id": "attention",
+          "pdf_page": 1,
+          "start_char": 1166,
+          "end_char": 1246
+        }
+      ],
+      "expected_answer": "28.4 BLEU"
+    },
+    {
+      "id": "selfrag-tokens",
+      "paper_id": "selfrag",
+      "split": "test",
+      "scope": "abstract",
+      "question": "Self-RAG 用什么特殊 token 支持反思？",
+      "lexical_query": "special reflection tokens",
+      "evidence_spans": [
+        {
+          "doc_id": "selfrag",
+          "pdf_page": 1,
+          "start_char": 1237,
+          "end_char": 1277
+        }
+      ],
+      "expected_answer": "reflection tokens"
+    },
+    {
+      "id": "selfrag-size",
+      "paper_id": "selfrag",
+      "split": "test",
+      "scope": "abstract",
+      "question": "摘要报告的 Self-RAG 模型参数规模有哪些？",
+      "lexical_query": "Self RAG 7B 13B parameters",
+      "evidence_spans": [
+        {
+          "doc_id": "selfrag",
+          "pdf_page": 1,
+          "start_char": 1456,
+          "end_char": 1483
+        }
+      ],
+      "expected_answer": "7B 与 13B"
+    },
+    {
+      "id": "selfrag-demand",
+      "paper_id": "selfrag",
+      "split": "test",
+      "scope": "abstract",
+      "question": "Self-RAG 如何决定何时检索材料？",
+      "lexical_query": "adaptively retrieves passages on demand",
+      "evidence_spans": [
+        {
+          "doc_id": "selfrag",
+          "pdf_page": 1,
+          "start_char": 1092,
+          "end_char": 1156
+        }
+      ],
+      "expected_answer": "模型自适应按需检索"
+    },
+    {
+      "id": "selfrag-types",
+      "paper_id": "selfrag",
+      "split": "test",
+      "scope": "full",
+      "question": "Self-RAG 把反思 token 分成哪两个大类？",
+      "lexical_query": "reflection tokens categorized retrieval critique",
+      "evidence_spans": [
+        {
+          "doc_id": "selfrag",
+          "pdf_page": 1,
+          "start_char": 3202,
+          "end_char": 3345
+        }
+      ],
+      "expected_answer": "检索 token 与批判 token"
+    },
+    {
+      "id": "qasper-gpu-abstract",
+      "paper_id": "qasper",
+      "split": "train",
+      "scope": "abstract",
+      "question": "仅依据摘要，能否确认作者使用的 GPU 型号？",
+      "lexical_query": "GPU graphics hardware model",
+      "evidence_spans": [],
+      "expected_status": "insufficient"
+    },
+    {
+      "id": "qasper-unrelated",
+      "paper_id": "qasper",
+      "split": "train",
+      "scope": "full",
+      "question": "香蕉蛋糕的烘烤温度和时间是多少？",
+      "lexical_query": "banana cake baking temperature time",
+      "evidence_spans": [],
+      "expected_status": "insufficient"
+    }
+  ]
+}

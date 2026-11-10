@@ -1,0 +1,28 @@
+{
+  "title": "高重叠 TSK 规则的短窗口后件更新",
+  "question": "短历史窗口不能充分区分两条规则时，单独收缩规则差异方向，能否降低合成漂移流中的预测误差，同时控制其他情景的退步？",
+  "adapter": "tsk_overlap",
+  "materials": [
+    {
+      "id": "fitsk",
+      "title": "FITSK: Online Local Learning With Generic Fuzzy Input Takagi–Sugeno–Kang Fuzzy Framework for Nonlinear System Estimation",
+      "url": "https://sci2s.ugr.es/keel/pdf/specific/articulo/71-I.pdf",
+      "locator": "PDF 第 1 页，引言",
+      "excerpt": "minimization of local learning errors without consideration of global behavior results in degradation of global learning accuracy."
+    },
+    {
+      "id": "swila",
+      "title": "Switching Linear Attention",
+      "url": "https://arxiv.org/html/2609.39034v1#S3",
+      "locator": "第 3 节",
+      "excerpt": "Optimization algorithm: online expectation–maximization (EM)."
+    },
+    {
+      "id": "sift",
+      "title": "SIFt-RLS: Subspace of Information Forgetting Recursive Least Squares",
+      "url": "https://arxiv.org/abs/2404.10844",
+      "locator": "摘要",
+      "excerpt": "forgets only in row space of the regressor matrix"
+    }
+  ]
+}

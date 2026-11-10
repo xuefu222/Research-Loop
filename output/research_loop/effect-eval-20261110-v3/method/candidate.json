@@ -1,0 +1,31 @@
+{
+  "stage": "candidate",
+  "parent_id": "85598212574fb9efa9842cf94a057b8bd2f2d08a6ca0c3b8c86bb1a440881c51",
+  "payload": {
+    "hypothesis": "使用成对排序损失代替二元交叉熵损失，在保持其他条件不变（包括LED编码器、段落打分头、数据划分、模型初始化及训练预算）的情况下，可以在QASPER数据集的证据段落抽取任务上至少提高Evidence F1分数0.5个百分点。",
+    "mechanism": "通过采用成对排序损失，模型被训练为不仅识别正例与负例，而且学习到正例相对于负例的相对重要性，这可能有助于更准确地定位支持答案的关键证据段落，从而潜在提升F1分数。",
+    "simple_baseline": "标准做法，即使用二元交叉熵损失进行训练。",
+    "closest_baseline": "we use a cross-entropy loss function with binary 0 or 1 gold labels",
+    "experiment": {
+      "metric": "Evidence F1分数",
+      "unit": "%",
+      "better": "higher",
+      "minimum_gain": 0.5,
+      "evaluation_data": "QASPER测试集",
+      "matched_conditions": "相同的LED编码器配置；相同的段落打分头部结构；一致的数据划分策略；相同的模型初始化种子；固定的训练轮次/步数。",
+      "negative_control": "标准做法，即使用二元交叉熵损失进行训练。",
+      "expected_control_behavior": "负对照组应表现出与文献报道相仿的性能水平，作为基准线比较新方法的效果。"
+    },
+    "closest_source_id": "qasper",
+    "comparisons": [
+      {
+        "source_id": "qasper",
+        "quote": "we use a cross-entropy loss function with binary 0 or 1 gold labels",
+        "relationship": "distinct",
+        "reason": "该实验计划旨在探索一种新的损失函数（成对排序损失）对于改进现有系统性能的可能性，而原始文献采用了不同的损失计算方式（二元交叉熵）。两者基于不同原理工作，因此被视为独立但相关联的方法论变化点。"
+      }
+    ],
+    "brief_id": "85598212574fb9efa9842cf94a057b8bd2f2d08a6ca0c3b8c86bb1a440881c51"
+  },
+  "id": "09b7a3fbbdec32e67e7a35e226ab009f9a3cc54d3a6e46b6f1ef6ead9b057566"
+}

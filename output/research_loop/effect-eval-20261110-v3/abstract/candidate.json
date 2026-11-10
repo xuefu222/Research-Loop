@@ -1,0 +1,31 @@
+{
+  "stage": "candidate",
+  "parent_id": "0b2dac79850e63222d831fa37ee2a2cb6f8c7c5e02c5d3a984ef6f9aeed02feb",
+  "payload": {
+    "hypothesis": "如果在QASPER数据集上进行证据段落抽取时，将损失函数从二元交叉熵替换为成对排序损失，同时保持LED编码器和段落打分头不变，则Evidence F1得分将至少提高1%。",
+    "mechanism": "成对排序损失通过优化正样本与负样本之间的相对顺序来进行学习，这可能更适合于需要理解文本间关系的任务，如证据段落抽取，从而相对于二元交叉熵损失带来性能上的提升。",
+    "simple_baseline": "使用二元交叉熵作为损失函数的标准方法。",
+    "closest_baseline": "同样使用二元交叉熵作为损失函数的方法，指代当前已知的最佳实践版本。",
+    "experiment": {
+      "metric": "Evidence F1",
+      "unit": "%",
+      "better": "higher",
+      "minimum_gain": 1.0,
+      "evaluation_data": "QASPER测试集",
+      "matched_conditions": "除了损失函数外的所有设置都保持一致，包括数据划分、模型初始化和训练预算等。",
+      "negative_control": "一种随机选择损失函数的配置",
+      "expected_control_behavior": "简单基线的表现应反映现有最佳实践的结果；阴性对照则应当表现出较差的效果。"
+    },
+    "closest_source_id": null,
+    "comparisons": [
+      {
+        "source_id": "qasper",
+        "quote": "a dataset of 5049 questions over 1585 Natural Language Processing papers",
+        "relationship": "uncertain",
+        "reason": "摘录仅描述了QASPER数据集的基本信息，未涉及具体方法论，因此无法确定其与当前假设的关系。"
+      }
+    ],
+    "brief_id": "0b2dac79850e63222d831fa37ee2a2cb6f8c7c5e02c5d3a984ef6f9aeed02feb"
+  },
+  "id": "0419de2718475d2e60f9b231c70ee461989fb76b8a100883ae0261d663257a9e"
+}

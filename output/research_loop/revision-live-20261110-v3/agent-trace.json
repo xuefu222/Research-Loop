@@ -1,0 +1,112 @@
+[
+  {
+    "node": "prepare",
+    "status": "recorded",
+    "brief_id": "0b2dac79850e63222d831fa37ee2a2cb6f8c7c5e02c5d3a984ef6f9aeed02feb"
+  },
+  {
+    "node": "draft",
+    "attempt": 1,
+    "round": 0,
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_result"
+    ],
+    "status": "recorded",
+    "candidate_id": "5ba1cf630f6404effd5668a6ee3ac44742a581c3eda869ab3a9d8e8129ad3b26"
+  },
+  {
+    "node": "audit",
+    "round": 0,
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_audit"
+    ],
+    "status": "recorded",
+    "audit_id": "99a3113dfacb8aba8f792b35761cdc199c00419fbc65823c2b4c7c71ff95a713"
+  },
+  {
+    "node": "revise",
+    "round": 1,
+    "retrieval": {
+      "method": "hybrid",
+      "scope": "full",
+      "doc_ids": [
+        "qasper"
+      ],
+      "index_sha256": "6d239e4cee2826408e8e7fac7828602df11e993adf3039dc133cd1226375f7d0",
+      "added_sources": [
+        "retrieved-6164a10867451302",
+        "retrieved-b588d3d8d523bda3",
+        "retrieved-6ebeb6057064a470"
+      ]
+    }
+  },
+  {
+    "node": "draft",
+    "attempt": 1,
+    "round": 1,
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper",
+      "retrieved-6164a10867451302",
+      "retrieved-6ebeb6057064a470",
+      "retrieved-b588d3d8d523bda3"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_result"
+    ],
+    "status": "rejected",
+    "error": "ValueError",
+    "validation_error": "Quote missing from its supplied source, or source id repeated"
+  },
+  {
+    "node": "draft",
+    "attempt": 2,
+    "round": 1,
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper",
+      "retrieved-6164a10867451302",
+      "retrieved-6ebeb6057064a470",
+      "retrieved-b588d3d8d523bda3"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_result"
+    ],
+    "status": "recorded",
+    "candidate_id": "a9b0fa8203052a4ec80fb481420c1887d285c873b884d3a1c0bd4e07e920ad1a"
+  },
+  {
+    "node": "audit",
+    "round": 1,
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper",
+      "retrieved-6164a10867451302",
+      "retrieved-6ebeb6057064a470",
+      "retrieved-b588d3d8d523bda3"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_audit"
+    ],
+    "status": "recorded",
+    "audit_id": "e3448505e02a6994cef70926e75b733322b693eb0dfe7de5412bcb095e07ed0d"
+  },
+  {
+    "node": "deliver",
+    "mode": "plan_only",
+    "status": "needs_revision"
+  }
+]

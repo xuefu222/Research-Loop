@@ -1,0 +1,42 @@
+{
+  "material_scope": "已索引论文的摘要；本次实际提供 1 个候选片段，回答仅依据这些片段。",
+  "answers": [
+    {
+      "question": "QASPER 包含多少个问题，涉及多少篇论文？",
+      "status": "supported",
+      "answer": "QASPER 包含 5,049 个问题，涉及 1,585 篇论文。",
+      "evidence_ids": [
+        "E1"
+      ]
+    },
+    {
+      "question": "仅依据摘要，能否确认作者使用的 GPU 型号？",
+      "status": "insufficient",
+      "answer": "仅依据摘要无法确认作者使用的 GPU 型号。当前材料未能提供关于所使用硬件的具体信息。",
+      "evidence_ids": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E1",
+      "source_id": "qasper",
+      "kind": "quote",
+      "text": "We therefore present Q ASPER ,\na dataset of 5,049 questions over 1,585 Natu-\nral Language Processing papers.",
+      "chunk_id": "b15b4378988ed4e553dd312eaf334411abcf1fb28c53b846d360435eb55cd193-p1-s528-e1528",
+      "pdf_page": 1,
+      "start_char": 1044,
+      "end_char": 1152,
+      "location": "PDF 第 1 页，提取文字字符 [1044, 1152)"
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "qasper",
+      "uri": "https://aclanthology.org/2021.naacl-main.365.pdf"
+    }
+  ],
+  "limitations": [
+    "原文来自 PDF 文字提取，表格与公式需要回到 PDF 核对。",
+    "自动审核使用与主流程相同的模型服务，不能视为独立人工核验。"
+  ]
+}

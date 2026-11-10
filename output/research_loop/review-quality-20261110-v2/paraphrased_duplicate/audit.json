@@ -1,0 +1,43 @@
+{
+  "stage": "audit",
+  "parent_id": "6db1d12acbfeb1b2a30e3985eeaa965413abcbf2257644352d23ebe58642593b",
+  "payload": {
+    "checks": {
+      "mechanism": {
+        "status": "pass",
+        "basis": "提案中描述的机制是明确且可执行的。",
+        "issues": []
+      },
+      "prior_art": {
+        "status": "uncertain",
+        "basis": "最接近的基准来自QASPER文档，但该摘录未提供有关成对排序方法的具体信息或比较。",
+        "issues": []
+      },
+      "falsifiability": {
+        "status": "fail",
+        "basis": "提案设定了具体的改进目标（Evidence F1至少提高0.5个百分点），这使得结果可以被验证或反驳。",
+        "issues": [
+          {
+            "field": "experiment.negative_control",
+            "problem": "基线操作为 使用类别加权二元交叉熵作为损失函数。；负对照操作为 继续使用原始的二元交叉熵训练，并重复基线配置。；机制干预为 未禁用特定机制。",
+            "correction": "当前负向控制设计仅仅是重复基线，未能有效检验所提方法的独特贡献。一个有效的负向控制应该尝试破坏提案的关键假设之一，例如通过随机化正负样本标签来模拟无信息环境下的性能。"
+          }
+        ]
+      },
+      "feasibility": {
+        "status": "pass",
+        "basis": "实验计划详细说明了如何保持模型初始化、数据划分等条件一致，确保了实验设计的有效性和技术上的可行性。",
+        "issues": []
+      }
+    },
+    "control_review": {
+      "baseline_operation": "使用类别加权二元交叉熵作为损失函数。",
+      "negative_operation": "继续使用原始的二元交叉熵训练，并重复基线配置。",
+      "disabled_mechanism": "未禁用特定机制",
+      "status": "invalid",
+      "correction": "当前负向控制设计仅仅是重复基线，未能有效检验所提方法的独特贡献。一个有效的负向控制应该尝试破坏提案的关键假设之一，例如通过随机化正负样本标签来模拟无信息环境下的性能。"
+    },
+    "candidate_id": "6db1d12acbfeb1b2a30e3985eeaa965413abcbf2257644352d23ebe58642593b"
+  },
+  "id": "0160bd48c9ab0e521d4ca78c9532d70191319c80da346baf3055642732e8ee4b"
+}

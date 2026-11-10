@@ -1,0 +1,17 @@
+{
+  "question": "在 QASPER 的证据段落抽取任务中，保持 LED 编码器和段落打分头相同，用成对排序损失替换二元交叉熵，能否提高 Evidence F1？",
+  "constraints": "设计实验计划。保持数据划分、模型初始化和训练预算一致，测试集不调参。论文判断只依据给定摘录，数值结果留待实际运行。",
+  "title": "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers",
+  "conditions": {
+    "method": {
+      "reference": "https://aclanthology.org/2021.naacl-main.365.pdf#page=6",
+      "locator": "第 5.1 节，Evidence extraction，PDF 第 6 页",
+      "excerpt": "we use a cross-entropy loss function with binary 0 or 1 gold labels"
+    },
+    "abstract": {
+      "reference": "https://aclanthology.org/2021.naacl-main.365/",
+      "locator": "摘要",
+      "excerpt": "a dataset of 5049 questions over 1585 Natural Language Processing papers"
+    }
+  }
+}

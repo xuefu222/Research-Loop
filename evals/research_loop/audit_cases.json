@@ -1,0 +1,55 @@
+{
+  "scope": "对冻结的实验设计检查负对照和指标单位，标注在模型调用前固定。",
+  "scored_fields": ["experiment.negative_control", "experiment.unit"],
+  "candidate": {
+    "hypothesis": "在固定 QASPER 划分上，成对排序相对两个 BCE 对照可提高 Evidence F1 至少 0.5 个百分点。",
+    "mechanism": "保持 LED 和段落打分头，固定每题采样的正负段落对，用 max(0, 1 - score_positive + score_negative) 损失替换 BCE。只在开发集选学习率，测试集一次评估。",
+    "simple_baseline": "二元交叉熵",
+    "closest_baseline": "类别加权二元交叉熵",
+    "closest_source_id": "qasper",
+    "comparisons": [
+      {
+        "source_id": "qasper",
+        "quote": "we use a cross-entropy loss function with binary 0 or 1 gold labels",
+        "relationship": "distinct",
+        "reason": "摘录明确二元分类目标，待检验方案使用成对分数间隔。其他成对排序先例仍需检索。"
+      }
+    ],
+    "experiment": {
+      "metric": "Evidence F1",
+      "unit": "百分点（F1 按 0–100 计）",
+      "better": "higher",
+      "minimum_gain": 0.5,
+      "evaluation_data": "固定的 QASPER 测试题和证据标签，开发集独立调参。",
+      "matched_conditions": "相同模型初始化、段落集合、数据划分、优化步数，记录三组固定种子。",
+      "negative_control": "随机打乱训练段落对的偏好标签",
+      "expected_control_behavior": "保持段落对、损失公式和预算，打乱偏好关系后，正确排序所带来的增益应减弱。"
+    }
+  },
+  "cases": [
+    {
+      "id": "duplicate_negative",
+      "experiment_patch": {"negative_control": "二元交叉熵"},
+      "expected_issue_fields": ["experiment.negative_control"],
+      "label_basis": "负对照与简单基线完全相同。"
+    },
+    {
+      "id": "paraphrased_duplicate",
+      "experiment_patch": {"negative_control": "保持原来的二元交叉熵训练，再重复一遍基线配置"},
+      "expected_issue_fields": ["experiment.negative_control"],
+      "label_basis": "换了说法但没有使拟研究的排序机制失效。"
+    },
+    {
+      "id": "ambiguous_gain",
+      "experiment_patch": {"unit": "%"},
+      "expected_issue_fields": ["experiment.unit"],
+      "label_basis": "0.5% 未说明是绝对百分点还是相对增益。"
+    },
+    {
+      "id": "valid_label_shuffle",
+      "experiment_patch": {},
+      "expected_issue_fields": [],
+      "label_basis": "随机打乱偏好标签是可执行的机制干预，单位明确为百分点。"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "dataset_sha256": "83991c05f17449b6108544cfa2fa49874fb6275638f4f7cac757edc1d8bf9b4d",
+  "cases": [
+    {
+      "id": "duplicate_negative",
+      "expected": [
+        "experiment.negative_control"
+      ],
+      "detected": [
+        "experiment.negative_control"
+      ],
+      "false_positives": [],
+      "missed": [],
+      "program_findings": [
+        "experiment.negative_control"
+      ],
+      "seconds": 41.25,
+      "node": "audit",
+      "model_calls": 2,
+      "evidence_reads": [
+        "qasper"
+      ],
+      "tool_calls": [
+        "read_evidence",
+        "submit_audit"
+      ],
+      "status": "recorded"
+    },
+    {
+      "id": "paraphrased_duplicate",
+      "expected": [
+        "experiment.negative_control"
+      ],
+      "detected": [
+        "experiment.negative_control"
+      ],
+      "false_positives": [],
+      "missed": [],
+      "program_findings": [],
+      "seconds": 26.05,
+      "node": "audit",
+      "model_calls": 2,
+      "evidence_reads": [
+        "qasper"
+      ],
+      "tool_calls": [
+        "read_evidence",
+        "submit_audit"
+      ],
+      "status": "recorded"
+    },
+    {
+      "id": "ambiguous_gain",
+      "expected": [
+        "experiment.unit"
+      ],
+      "detected": [],
+      "false_positives": [],
+      "missed": [
+        "experiment.unit"
+      ],
+      "program_findings": [
+        "experiment.unit"
+      ],
+      "seconds": 28.57,
+      "node": "audit",
+      "model_calls": 2,
+      "evidence_reads": [
+        "qasper"
+      ],
+      "tool_calls": [
+        "read_evidence",
+        "submit_audit"
+      ],
+      "status": "recorded"
+    },
+    {
+      "id": "valid_label_shuffle",
+      "expected": [],
+      "detected": [],
+      "false_positives": [],
+      "missed": [],
+      "program_findings": [],
+      "seconds": 29.73,
+      "node": "audit",
+      "model_calls": 2,
+      "evidence_reads": [
+        "qasper"
+      ],
+      "tool_calls": [
+        "read_evidence",
+        "submit_audit"
+      ],
+      "status": "recorded"
+    }
+  ],
+  "precision": 1.0,
+  "recall": 0.6666666666666666,
+  "exact_cases": 3,
+  "scope": "四条预标注开发案例，只计负对照和单位。审查可见程序检查结果。",
+  "true_positives": 2,
+  "expected_issues": 3,
+  "combined": {
+    "true_positives": 3,
+    "expected_issues": 3,
+    "precision": 1.0,
+    "recall": 1.0,
+    "exact_cases": 4
+  }
+}

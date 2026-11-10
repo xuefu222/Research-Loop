@@ -1,0 +1,39 @@
+[
+  {
+    "node": "prepare",
+    "status": "recorded",
+    "brief_id": "0b2dac79850e63222d831fa37ee2a2cb6f8c7c5e02c5d3a984ef6f9aeed02feb"
+  },
+  {
+    "node": "draft",
+    "attempt": 1,
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_result"
+    ],
+    "status": "recorded",
+    "candidate_id": "0419de2718475d2e60f9b231c70ee461989fb76b8a100883ae0261d663257a9e"
+  },
+  {
+    "node": "audit",
+    "model_calls": 2,
+    "evidence_reads": [
+      "qasper"
+    ],
+    "tool_calls": [
+      "read_evidence",
+      "submit_audit"
+    ],
+    "status": "recorded",
+    "audit_id": "3fcaeef8cfd066cbef858b33c172dd09eac7b775c759b8f96ebcdc6787cb2014"
+  },
+  {
+    "node": "deliver",
+    "mode": "plan_only",
+    "status": "needs_revision"
+  }
+]

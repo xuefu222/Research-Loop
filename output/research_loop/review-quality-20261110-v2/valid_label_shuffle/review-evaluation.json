@@ -1,0 +1,19 @@
+{
+  "id": "valid_label_shuffle",
+  "expected": [],
+  "detected": [],
+  "false_positives": [],
+  "missed": [],
+  "program_findings": [],
+  "seconds": 29.73,
+  "node": "audit",
+  "model_calls": 2,
+  "evidence_reads": [
+    "qasper"
+  ],
+  "tool_calls": [
+    "read_evidence",
+    "submit_audit"
+  ],
+  "status": "recorded"
+}

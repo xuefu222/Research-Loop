@@ -1,0 +1,49 @@
+{
+  "stage": "audit",
+  "parent_id": "86158e5ccff74db662a46919d4e68e1282d74679f786986251a3ed0547b3ccf7",
+  "payload": {
+    "checks": {
+      "mechanism": {
+        "status": "pass",
+        "basis": "变更细节明确且与目标紧密相连",
+        "issues": []
+      },
+      "prior_art": {
+        "status": "uncertain",
+        "basis": "无法从现有来源摘录断定该方法是否新颖",
+        "issues": [
+          {
+            "field": "closest_source_id",
+            "problem": "没有提供足够的背景资料来判断是否有相似的工作",
+            "correction": "查找更多文献以确认是否存在类似研究"
+          }
+        ]
+      },
+      "falsifiability": {
+        "status": "fail",
+        "basis": "设定的具体阈值使结果可以被验证",
+        "issues": [
+          {
+            "field": "experiment.negative_control",
+            "problem": "基线操作为 采用二元交叉熵损失训练；负对照操作为 同样使用二元交叉熵损失，但打乱正负样本对；机制干预为 成对排序损失中的相对评分原则。",
+            "correction": "应设计一个真正失效核心机制的负对照"
+          }
+        ]
+      },
+      "feasibility": {
+        "status": "pass",
+        "basis": "计划的操作步骤看起来是可以实施的",
+        "issues": []
+      }
+    },
+    "control_review": {
+      "baseline_operation": "采用二元交叉熵损失训练",
+      "negative_operation": "同样使用二元交叉熵损失，但打乱正负样本对",
+      "disabled_mechanism": "成对排序损失中的相对评分原则",
+      "status": "invalid",
+      "correction": "应设计一个真正失效核心机制的负对照"
+    },
+    "candidate_id": "86158e5ccff74db662a46919d4e68e1282d74679f786986251a3ed0547b3ccf7"
+  },
+  "id": "86eb70ed93e7057a1c67e1bc9e82dc03d574c173a09b24bdbd38329783ed3065"
+}

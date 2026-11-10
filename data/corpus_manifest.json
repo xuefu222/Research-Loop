@@ -1,0 +1,40 @@
+{
+  "documents": [
+    {
+      "doc_id": "qasper",
+      "title": "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers",
+      "path": "data/raw/qasper.pdf",
+      "url": "https://aclanthology.org/2021.naacl-main.365.pdf",
+      "landing_url": "https://aclanthology.org/2021.naacl-main.365/",
+      "version": "NAACL 2021 publisher PDF",
+      "split": "train"
+    },
+    {
+      "doc_id": "rag",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "path": "data/raw/rag.pdf",
+      "url": "https://arxiv.org/pdf/2005.11401v4",
+      "landing_url": "https://arxiv.org/abs/2005.11401v4",
+      "version": "arXiv:2005.11401v4",
+      "split": "train"
+    },
+    {
+      "doc_id": "attention",
+      "title": "Attention Is All You Need",
+      "path": "data/raw/attention.pdf",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "landing_url": "https://arxiv.org/abs/1706.03762v7",
+      "version": "arXiv:1706.03762v7",
+      "split": "validation"
+    },
+    {
+      "doc_id": "selfrag",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "path": "data/raw/selfrag.pdf",
+      "url": "https://arxiv.org/pdf/2310.11511v1",
+      "landing_url": "https://arxiv.org/abs/2310.11511v1",
+      "version": "arXiv:2310.11511v1",
+      "split": "test"
+    }
+  ]
+}

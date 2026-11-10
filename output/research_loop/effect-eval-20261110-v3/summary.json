@@ -1,0 +1,38 @@
+{
+  "method": {
+    "state": "needs_revision",
+    "report_written": true,
+    "proposal_recorded": true,
+    "audit_recorded": true,
+    "closest_source_id": "qasper",
+    "prior_art": "uncertain",
+    "quotes": 1,
+    "quotes_found_in_source": 1,
+    "evidence_readers": [
+      "draft",
+      "audit"
+    ],
+    "model_calls": 4,
+    "pilot_executed": false,
+    "wall_seconds": 66.7,
+    "report": "RESULT-2e600392384c.md"
+  },
+  "abstract": {
+    "state": "needs_revision",
+    "report_written": true,
+    "proposal_recorded": true,
+    "audit_recorded": true,
+    "closest_source_id": null,
+    "prior_art": "uncertain",
+    "quotes": 1,
+    "quotes_found_in_source": 1,
+    "evidence_readers": [
+      "draft",
+      "audit"
+    ],
+    "model_calls": 4,
+    "pilot_executed": false,
+    "wall_seconds": 58.44,
+    "report": "RESULT-3fcaeef8cfd0.md"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "stage": "proposal",
+  "parent_id": "6a98dec0049f1e5be61e3e1696dc86ce16531e26cc7bf248612060ab5e951457",
+  "payload": {
+    "hypothesis": "当历史输入集中在两规则共同激活的区域，联合更新容易在历史难以区分的规则差异方向上吸收噪声。保留对共享方向的适应，同时收缩弱证据方向，可能对共享漂移有益，但可能延缓真实规则差异的变化。",
+    "mechanism": "将两条一阶 TSK 规则的参数转成共享和差异两个正交坐标。记窗口特征为 A 和 B，A 对应共享方向。先求共享岭更新，再用 Schur 补 S = BᵀB − BᵀA(AᵀA+λI)⁻¹AᵀB 衡量差异块的条件信息。对 S 的特征方向分别乘以 s/(s+τ)，最后用当前查询在这些方向上的响应生成预测。调整 τ 只用验证种子。",
+    "falsifier": "如果主情景的 RMSE 改善不足预设门槛、无法超过最强的固定对照，或真实差异漂移等任一切片退步超限，则保留联合岭回归。全矩阵谱收缩和固定强岭是检验规则差异分解是否必要的对照。",
+    "nearby_work": [
+      {
+        "source_id": "fitsk",
+        "quote": "minimization of local learning errors without consideration of global behavior results in degradation of global learning accuracy.",
+        "comparison": "经典 TSK 已研究局部与整体拟合的取舍。联合拟合是基线。"
+      },
+      {
+        "source_id": "swila",
+        "quote": "Optimization algorithm: online expectation–maximization (EM).",
+        "comparison": "SwiLA 已用多个线性分量形成序列记忆。这里试验的是固定模糊前件后的条件谱收缩，没有复现其在线 EM。"
+      },
+      {
+        "source_id": "sift",
+        "quote": "forgets only in row space of the regressor matrix",
+        "comparison": "方向选择已有成熟近邻。这里将规则差异对共享特征的条件信息用于窗口预测收缩，是否具有独立论文贡献需要再查证。"
+      }
+    ]
+  },
+  "id": "f9740d3fa67e696088844ce5a9ae273ed6aee6164b4cee76831bbeb84508f84c"
+}

@@ -1,0 +1,31 @@
+{
+  "stage": "candidate",
+  "parent_id": "85598212574fb9efa9842cf94a057b8bd2f2d08a6ca0c3b8c86bb1a440881c51",
+  "payload": {
+    "hypothesis": "在固定 QASPER 划分上，成对排序相对两个 BCE 对照可提高 Evidence F1 至少 0.5 个百分点。",
+    "mechanism": "保持 LED 和段落打分头，固定每题采样的正负段落对，用 max(0, 1 - score_positive + score_negative) 损失替换 BCE。只在开发集选学习率，测试集一次评估。",
+    "simple_baseline": "二元交叉熵",
+    "closest_baseline": "类别加权二元交叉熵",
+    "closest_source_id": "qasper",
+    "comparisons": [
+      {
+        "source_id": "qasper",
+        "quote": "we use a cross-entropy loss function with binary 0 or 1 gold labels",
+        "relationship": "distinct",
+        "reason": "摘录明确二元分类目标，待检验方案使用成对分数间隔。其他成对排序先例仍需检索。"
+      }
+    ],
+    "experiment": {
+      "metric": "Evidence F1",
+      "unit": "%",
+      "better": "higher",
+      "minimum_gain": 0.5,
+      "evaluation_data": "固定的 QASPER 测试题和证据标签，开发集独立调参。",
+      "matched_conditions": "相同模型初始化、段落集合、数据划分、优化步数，记录三组固定种子。",
+      "negative_control": "随机打乱训练段落对的偏好标签",
+      "expected_control_behavior": "保持段落对、损失公式和预算，打乱偏好关系后，正确排序所带来的增益应减弱。"
+    },
+    "brief_id": "85598212574fb9efa9842cf94a057b8bd2f2d08a6ca0c3b8c86bb1a440881c51"
+  },
+  "id": "e437f1a297bdc0cda949ef63bc486efcdadfea40478ba7d688aa9193eee9811d"
+}

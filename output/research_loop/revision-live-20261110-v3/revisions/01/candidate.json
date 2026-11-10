@@ -1,0 +1,55 @@
+{
+  "stage": "candidate",
+  "parent_id": "0565d9be418b5fc5d68dfd6f22914d6aaf4cb445dd628ea5dc63d37be2e2f8a4",
+  "payload": {
+    "design_version": 2,
+    "hypothesis": "在 QASPER 的证据段落抽取任务中，如果保持 LED 编码器和段落打分头相同，并且用成对排序损失替换二元交叉熵，那么 Evidence F1 得分至少可以提高 1 个百分点。",
+    "mechanism": "成对排序损失能够直接优化模型对于相关与不相关段落之间的相对排序，而不仅仅是区分相关性。这种直接针对排序的优化可能使得模型在处理信息检索任务时表现得更好，从而提高 Evidence F1。",
+    "simple_baseline": "使用二元交叉熵作为损失函数进行训练。",
+    "closest_baseline": "使用二元交叉熵作为损失函数进行训练。",
+    "experiment": {
+      "metric": "Evidence F1",
+      "unit": "percentage points",
+      "better": "higher",
+      "minimum_gain": 1.0,
+      "evaluation_data": "使用 QASPER 数据集中的测试部分进行评估。",
+      "matched_conditions": "保持数据划分、LED编码器、段落打分头、模型初始化以及训练预算一致。确保测试集上没有调参。",
+      "negative_control": "完全移除损失函数。",
+      "expected_control_behavior": "预期负控制组的表现接近随机猜测水平。",
+      "controls": [
+        {
+          "role": "simple_baseline",
+          "method": "使用二元交叉熵作为损失函数进行训练。",
+          "changed_factor": "无",
+          "held_constant": "LED编码器, 段落打分头, 数据划分, 模型初始化, 训练预算",
+          "expected": "当使用标准设置时，Evidence F1得分应反映当前技术水平的表现。"
+        },
+        {
+          "role": "closest_baseline",
+          "method": "使用二元交叉熵作为损失函数进行训练。",
+          "changed_factor": "无",
+          "held_constant": "同上",
+          "expected": "由于closest_baseline与simple_baseline相同，在这个情况下预期结果也是一样的。"
+        },
+        {
+          "role": "negative_control",
+          "method": "完全移除损失函数。",
+          "changed_factor": "损失函数被移除",
+          "held_constant": "LED编码器, 段落打分头, 数据划分, 模型初始化, 训练预算",
+          "expected": "性能显著下降至接近随机水平，因为模型无法通过训练学习到任何有用的信息。"
+        }
+      ]
+    },
+    "closest_source_id": null,
+    "comparisons": [
+      {
+        "source_id": "qasper",
+        "quote": "a dataset of 5049 questions over 1585 Natural Language Processing papers",
+        "relationship": "uncertain",
+        "reason": "文献中没有提到关于损失函数选择及其对QASPER任务影响的细节，所以我们对此比较不能确定。"
+      }
+    ],
+    "brief_id": "0565d9be418b5fc5d68dfd6f22914d6aaf4cb445dd628ea5dc63d37be2e2f8a4"
+  },
+  "id": "a9b0fa8203052a4ec80fb481420c1887d285c873b884d3a1c0bd4e07e920ad1a"
+}

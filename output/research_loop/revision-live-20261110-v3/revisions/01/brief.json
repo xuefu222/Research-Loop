@@ -1,0 +1,43 @@
+{
+  "stage": "brief",
+  "parent_id": null,
+  "payload": {
+    "question": "在 QASPER 的证据段落抽取任务中，保持 LED 编码器和段落打分头相同，用成对排序损失替换二元交叉熵，能否提高 Evidence F1？",
+    "constraints": "设计实验计划。保持数据划分、模型初始化和训练预算一致，测试集不调参。论文判断只依据给定摘录，数值结果留待实际运行。",
+    "sources": [
+      {
+        "id": "qasper",
+        "title": "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers",
+        "scope": "abstract",
+        "reference": "https://aclanthology.org/2021.naacl-main.365/",
+        "locator": "摘要",
+        "excerpt": "a dataset of 5049 questions over 1585 Natural Language Processing papers"
+      },
+      {
+        "id": "retrieved-6164a10867451302",
+        "title": "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers",
+        "reference": "https://aclanthology.org/2021.naacl-main.365.pdf",
+        "locator": "仅此检索片段，PDF 第 7 页，字符 2400–3400",
+        "scope": "full_text",
+        "excerpt": "ion; and (3) research into making large pretrained mod- els able to better scale to long documents would be beneficial. Model EvidenceF1 Dev. Test LED-base 23.94 29.85 LED-large 31.25 39.37 TF-IDF 10.68 9.20 Random paragraph 2.09 1.30 First paragraph 0.71 0.34 Human (lower bound) - 71.62 Table 3: Model and lower-bound human performance on selecting evidence for questions in QASPER Figure 2: Learning curves showing Answer- F1 and Evidence-F1 on the dev. set while varying training data size. Error analysis To gain insight into the model’s errors, we sample 67 test questions with predicted Answer-F1 scores below 0.10 from the LED model trained with evidence prediction scaffolding. We remove four cases in which the predicted answers are actually correct. Examining gold answers of the remaining 63, we find 31 are extractive, 24 are abstractive, 3 are “yes”, 3 are “no,” and 2 are unanswerable. We observe that LED often predicts shorter spans than the gold answers (9.5 words shorter than gold c"
+      },
+      {
+        "id": "retrieved-b588d3d8d523bda3",
+        "title": "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers",
+        "reference": "https://aclanthology.org/2021.naacl-main.365.pdf",
+        "locator": "仅此检索片段，PDF 第 5 页，字符 4000–4751",
+        "scope": "full_text",
+        "excerpt": "0), an encoder-decoder Transformer model that can effi- ciently process input sequences thousands of to- kens long. With LED’s support for input sequence length of 16K tokens, we can encode 99% of the paper full texts in the QASPER dataset without trun- cation. Longformer-Encoder-Decoder (LED) LED (Beltagy et al., 2020) is a variant of the original Transformer encoder-decoder model that replaces the Transformer’s full self-attention in the encoder with the efficient local+global attention pattern 9https://paperswithcode.com/task/ question-answering 10We tried a model that predicts answer type, then based on the type uses a different head to predict the corresponding answer. This model performed much worse than the proposed seq2seq formulation."
+      },
+      {
+        "id": "retrieved-6ebeb6057064a470",
+        "title": "A Dataset of Information-Seeking Questions and Answers Anchored in Research Papers",
+        "reference": "https://aclanthology.org/2021.naacl-main.365.pdf",
+        "locator": "仅此检索片段，PDF 第 6 页，字符 800–1800",
+        "scope": "full_text",
+        "excerpt": "T-base weights. Input and Output Encoding For the input, we follow the Longformer QA models (Beltagy et al., 2020) and encode the question and context in one concatenated string with “global attention” over all the question tokens. For the output, all answer types are encoded as single strings. The string is the text of the abstractive answer, a comma separated concatenation of the extractive spans, “Yes”, “No”, or “Unanswerable”. Evidence extraction To support extracting evi- dence paragraphs, we prepend each paragraph with a </s> token and add a classification head over these tokens on LED’s encoder side. We also add Longformer’s global attention over these tokens to facilitate direct information flow across the para- graphs. We then train LED using both loss func- tions (teacher-forced text generation and paragraph classification) in a multi-task training setup. For the answer generation, we use a cross-entropy loss function over the vocabulary. For the evidence para- graph extraction,"
+      }
+    ]
+  },
+  "id": "0565d9be418b5fc5d68dfd6f22914d6aaf4cb445dd628ea5dc63d37be2e2f8a4"
+}

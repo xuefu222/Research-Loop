@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-11-06T18:59:21.242570+00:00",
+  "passed": true,
+  "checks": {
+    "source_syntax": true,
+    "unique_chunks": true,
+    "all_raw_offsets_match": true,
+    "finite_unit_vectors": true,
+    "all_sources_have_abstracts": true,
+    "raw_pdf_checksums_match": true,
+    "credential_not_in_code_or_reports": true,
+    "dependencies": true,
+    "tests": true
+  },
+  "commands": {
+    "dependencies": {
+      "exit_code": 0,
+      "stdout": "No broken requirements found.\n",
+      "stderr": ""
+    },
+    "tests": {
+      "exit_code": 0,
+      "stdout": "...............................                                          [100%]\n31 passed in 3.60s\n",
+      "stderr": ""
+    }
+  },
+  "documents": 4,
+  "chunks": 355,
+  "credential_scan_flagged_files": []
+}

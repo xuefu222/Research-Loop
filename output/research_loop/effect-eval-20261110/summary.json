@@ -1,0 +1,32 @@
+{
+  "method": {
+    "state": "awaiting_candidate",
+    "report_written": true,
+    "proposal_recorded": false,
+    "audit_recorded": false,
+    "closest_source_id": null,
+    "prior_art": null,
+    "quotes": 0,
+    "quotes_found_in_source": 0,
+    "evidence_readers": [],
+    "model_calls": 4,
+    "pilot_executed": false,
+    "wall_seconds": 54.77,
+    "report": "RESULT-85598212574f.md"
+  },
+  "abstract": {
+    "state": "awaiting_candidate",
+    "report_written": true,
+    "proposal_recorded": false,
+    "audit_recorded": false,
+    "closest_source_id": null,
+    "prior_art": null,
+    "quotes": 0,
+    "quotes_found_in_source": 0,
+    "evidence_readers": [],
+    "model_calls": 4,
+    "pilot_executed": false,
+    "wall_seconds": 53.94,
+    "report": "RESULT-0b2dac79850e.md"
+  }
+}

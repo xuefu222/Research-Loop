@@ -1,0 +1,43 @@
+{
+  "stage": "audit",
+  "parent_id": "515ffc32782a34748d1c42e4072f56fc5e903652d3114e867690195b622c2c4f",
+  "payload": {
+    "checks": {
+      "mechanism": {
+        "status": "pass",
+        "basis": "机制描述了具体且可执行的变更，并且度量标准区分了绝对百分点的变化。",
+        "issues": []
+      },
+      "prior_art": {
+        "status": "uncertain",
+        "basis": "虽然明确了当前方法的不同之处，但缺乏关于成对排序损失用于此特定任务的相关先例。",
+        "issues": [
+          {
+            "field": "closest_source_id",
+            "problem": "没有提供有关成对排序损失用于QASPER数据集的具体先例。",
+            "correction": "需要进一步检索相关文献来确认是否有类似的工作已经完成。"
+          }
+        ]
+      },
+      "falsifiability": {
+        "status": "pass",
+        "basis": "提案包含了一个明确且可通过实验验证的假设。",
+        "issues": []
+      },
+      "feasibility": {
+        "status": "pass",
+        "basis": "实验设计包括详细的匹配条件，确保了实验的可重复性和公平比较。",
+        "issues": []
+      }
+    },
+    "control_review": {
+      "baseline_operation": "使用未修改的正负段落对和成对排序损失进行训练",
+      "negative_operation": "随机打乱训练段落对的偏好标签",
+      "disabled_mechanism": "基于段落对之间正确关系的学习过程",
+      "status": "valid",
+      "correction": ""
+    },
+    "candidate_id": "515ffc32782a34748d1c42e4072f56fc5e903652d3114e867690195b622c2c4f"
+  },
+  "id": "4eb89b4131557f97f4d1b15e3f1352c76795ff08ef2f94f55124386b16c1d6a9"
+}

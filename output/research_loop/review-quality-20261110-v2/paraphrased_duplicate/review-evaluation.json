@@ -1,0 +1,23 @@
+{
+  "id": "paraphrased_duplicate",
+  "expected": [
+    "experiment.negative_control"
+  ],
+  "detected": [
+    "experiment.negative_control"
+  ],
+  "false_positives": [],
+  "missed": [],
+  "program_findings": [],
+  "seconds": 26.05,
+  "node": "audit",
+  "model_calls": 2,
+  "evidence_reads": [
+    "qasper"
+  ],
+  "tool_calls": [
+    "read_evidence",
+    "submit_audit"
+  ],
+  "status": "recorded"
+}

@@ -1,0 +1,37 @@
+{
+  "stage": "audit",
+  "parent_id": "a9b0fa8203052a4ec80fb481420c1887d285c873b884d3a1c0bd4e07e920ad1a",
+  "payload": {
+    "checks": {
+      "mechanism": {
+        "status": "pass",
+        "basis": "提议的机制是使用成对排序损失来直接优化相关与不相关段落之间的相对排序，这可能有助于提高证据抽取任务中的 Evidence F1 分数。这种改变是明确且可执行的。",
+        "issues": []
+      },
+      "prior_art": {
+        "status": "uncertain",
+        "basis": "最近源文档未提供有关在 QASPER 数据集上采用不同损失函数（特别是成对排序损失）的具体细节或结果。因此，我们无法确定该方法是否已经存在或者其效果如何。",
+        "issues": []
+      },
+      "falsifiability": {
+        "status": "pass",
+        "basis": "该假设可以被实验验证，因为如果提出的更改没有导致至少 1 个百分点的 Evidence F1 增加，则该假设会被否定。",
+        "issues": []
+      },
+      "feasibility": {
+        "status": "pass",
+        "basis": "实验计划详细说明了保持其他条件不变的情况下仅替换损失函数的方法。此实验设计合理可行。",
+        "issues": []
+      }
+    },
+    "control_review": {
+      "baseline_operation": "使用二元交叉熵作为损失函数进行训练。",
+      "negative_operation": "完全移除损失函数。",
+      "disabled_mechanism": "模型通过训练学习任何有用信息的能力。",
+      "status": "valid",
+      "correction": "无需修改，当前设计合理。负控制组通过完全移除损失函数确实能够有效检验模型学习能力的重要性，而不仅仅是重复基线设置。"
+    },
+    "candidate_id": "a9b0fa8203052a4ec80fb481420c1887d285c873b884d3a1c0bd4e07e920ad1a"
+  },
+  "id": "e3448505e02a6994cef70926e75b733322b693eb0dfe7de5412bcb095e07ed0d"
+}
